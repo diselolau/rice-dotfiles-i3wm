@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="preview.png" alt="Everforest i3wm Rice" width="800">
+</p>
 # Everforest i3wm Dotfiles
 
 ## Core Components
