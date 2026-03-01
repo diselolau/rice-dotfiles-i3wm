@@ -3,10 +3,9 @@
 * **WM:** i3-gaps
 * **Bar:** Polybar
 * **Terminal:** Alacritty
-* **Shell:** Fish (with auto-clear feature)
+* **Shell:** Fish
 * **Launcher:** Rofi
-* **Compositor:** Picom (animations enabled)
-
+* **Compositor:** Picom
 ## External Themes
 If you want the full look, you will need these:
 * **GTK Theme:** [Everforest-BL-LB-Dark](https://www.pling.com/p/1695467/)
