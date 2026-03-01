@@ -1,0 +1,53 @@
+# --- Theme & Appearance ---
+color_theme = "my_rice"
+theme_background = false
+truecolor = true
+rounded_corners = true
+graph_symbol = "braille"
+presets = "cpu:1:default,proc:0:default cpu:0:default,mem:0:default,net:0:default cpu:0:block,net:0:tty"
+
+# --- Operational Settings ---
+update_ms = 2000
+vim_keys = false
+save_config_on_exit = true
+log_level = "WARNING"
+
+# --- CPU & GPU Settings ---
+cpu_sensor = "Auto"
+check_temp = true
+cpu_invert_lower = true
+cpu_single_graph = false
+show_uptime = true
+show_cpu_watts = true
+show_cpu_freq = true
+show_gpu_info = "Auto"
+cpu_graph_upper = "Auto"
+cpu_graph_lower = "Auto"
+
+# --- Process Settings ---
+proc_sorting = "cpu lazy"
+proc_reversed = false
+proc_tree = false
+proc_colors = true
+proc_gradient = true
+proc_mem_bytes = true
+proc_cpu_graphs = true
+
+# --- Memory & Disks ---
+mem_graphs = true
+show_swap = true
+swap_disk = true
+show_disks = true
+only_physical = true
+use_fstab = true
+
+# --- Network & Battery ---
+net_auto = true
+net_sync = true
+show_battery = true
+show_battery_watts = true
+
+# --- Hardware Specific ---
+nvml_measure_pcie_speeds = true
+rsmi_measure_pcie_speeds = true
+gpu_mirror_graph = true

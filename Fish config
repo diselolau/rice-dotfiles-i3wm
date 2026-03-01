@@ -1,0 +1,29 @@
+# --- Interactive Session Settings ---
+if status is-interactive
+    # Disable initial greeting
+    set -g fish_greeting ""
+
+    # --- Custom Prompt ---
+    function fish_prompt
+        # First line: Current directory (Blue)
+        set_color 89b4fa 
+        echo (prompt_pwd)
+
+        # Second line: Decorative symbol (Red)
+        set_color f38ba8 
+        echo -n "❯ "
+
+        set_color normal
+    end
+
+    # --- Auto-Clear Feature ---
+    # Clears the terminal screen right before executing a new command
+    function auto_clear_pre --on-event fish_preexec
+        clear
+    end
+
+    # --- Aliases ---
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+    alias update='sudo dnf update'
+end

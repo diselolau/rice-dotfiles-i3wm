@@ -1,0 +1,106 @@
+configuration {
+    /* --- GENERAL SETTINGS --- */
+    modi:                       "drun,run,window";
+    font:                       "CaskaydiaMono Nerd Font 10";
+    show-icons:                 true;
+    display-drun:               ""; 
+    display-run:                "";
+    drun-display-format:        "{name}";
+}
+
+/* --- COLOR DEFINITIONS (Everforest-inspired) --- */
+* {
+    bg:      #1d1f21;
+    bg-alt:  #282a2e;
+    fg:      #c5c8c6;
+    accent:  #5f819d;
+    
+    background-color: transparent;
+    text-color:       @fg;
+    margin:           0;
+    padding:          0;
+    spacing:          0;
+}
+
+/* --- MAIN WINDOW --- */
+window {
+    width:            400px;
+    background-color: @bg;
+    border:           2px;
+    border-color:     @bg-alt;
+    border-radius:    12px;
+}
+
+mainbox {
+    padding:          15px;
+    background-color: @bg;
+    children:         [ inputbar, listview ];
+}
+
+/* --- INPUT SECTION --- */
+inputbar {
+    background-color: @bg-alt;
+    padding:          10px;
+    margin:           0 0 10px 0;
+    border-radius:    6px;
+    children:         [ prompt, entry ];
+}
+
+prompt {
+    background-color: transparent;
+    text-color:       @accent;
+    padding:          0 10px 0 5px;
+}
+
+entry {
+    background-color: transparent;
+    text-color:       @fg;
+    placeholder:      "Search...";
+    placeholder-color: #707880;
+}
+
+/* --- LIST VIEW --- */
+listview {
+    lines:            8;
+    fixed-height:     true;
+    background-color: transparent;
+    spacing:          4px;
+    scrollbar:        false;
+    border:           0px;
+}
+
+/* --- ELEMENTS --- */
+element {
+    padding:          8px;
+    border-radius:    6px;
+    background-color: @bg;
+    text-color:       @fg;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: @bg;
+    text-color:       @fg;
+}
+
+element selected.normal,
+element selected.urgent,
+element selected.active {
+    background-color: @bg-alt;
+    text-color:       @accent;
+}
+
+element-icon, element-text {
+    background-color: transparent;
+    text-color:       inherit;
+}
+
+element-icon {
+    size: 24px;
+    cursor: inherit;
+}
+
+element-text {
+    vertical-align: 0.5;
+    cursor: inherit;
+}

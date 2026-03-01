@@ -1,0 +1,138 @@
+# i3 config - Custom Rice
+# Main Modifier Key (Mod1 = Alt, Mod4 = Super/Windows)
+set $mod Mod1
+
+# --- FONTS ---
+font pango:monospace 10
+
+# --- WINDOW AESTHETICS (Borders & Gaps) ---
+default_border pixel 1
+default_floating_border pixel 1
+hide_edge_borders both
+
+# Window Spacing (Gaps)
+gaps inner 6
+gaps outer 0
+smart_gaps on
+smart_borders no_gaps
+
+# --- COLORS (Everforest/Dark Theme) ---
+# class                 border    backgr.   text    indicator child_border
+client.focused          #282a2e   #282a2e   #c5c8c6 #282a2e   #282a2e
+client.unfocused        #1d1f21   #1d1f21   #4d4d4d #1d1f21   #1d1f21
+client.focused_inactive #1d1f21   #1d1f21   #4d4d4d #1d1f21   #1d1f21
+client.urgent           #a54242   #a54242   #ffffff #a54242   #a54242
+client.placeholder      #1d1f21   #1d1f21   #ffffff #1d1f21   #1d1f21
+client.background       #1d1f21
+
+# --- AUTOSTART ---
+exec --no-startup-id dex-autostart --autostart --environment i3
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id /usr/bin/dbus-launch --exit-with-session
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id pkill picom; picom -b
+exec_always --no-startup-id sh ~/.fehbg
+exec --no-startup-id systemd-inhibit --what=idle --who="i3-session" --why="Watching videos" sleep infinity
+
+# --- KEYBINDINGS ---
+# Basic Apps
+bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+q kill
+floating_modifier $mod
+
+# Launchers
+bindsym $mod+s exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym Print exec flameshot gui
+
+# Navigation (Focus)
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+ntilde focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move Windows
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+ntilde move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Layout Management
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+Shift+space floating toggle
+
+# Workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# Audio Control
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# --- WINDOW RULES ---
+# Custom title for Firefox
+for_window [class="firefox"] title_format "Firefox"
+
+# --- THEMING ---
+exec_always --no-startup-id gsettings set org.gnome.desktop.interface gtk-theme 'Squared'
+exec_always --no-startup-id gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
+# --- SYSTEM MANAGEMENT ---
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'"
+
+# Resize Mode
+mode "resize" {
+    bindsym j resize shrink width 10 px
+    bindsym k resize grow height 10 px
+    bindsym l resize shrink height 10 px
+    bindsym ntilde resize grow width 10 px
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
