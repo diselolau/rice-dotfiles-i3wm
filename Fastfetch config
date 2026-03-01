@@ -1,0 +1,54 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "small",
+        "color": {
+            "1": "white" 
+        },
+        "padding": {
+            "top": 0
+        }
+    },
+    "display": {
+        "separator": " >  ",
+        "color": {
+            "keys": "white"
+        }
+    },
+    "modules": [
+        {
+            "type": "custom",
+            "format": "\n"
+        },
+        {
+            "type": "os",
+            "key": "OS  ",
+            "format": "Fedora 43"
+        },
+        {
+            "type": "kernel",
+            "key": "KER ",
+            "format": "Linux 6.18.8-200"
+        },
+        {
+            "type": "packages",
+            "key": "PKG ",
+            "format": "2355 (rpm)"
+        },
+        {
+            "type": "shell",
+            "key": "SH  ",
+            "format": "fish 4.2.0"
+        },
+        {
+            "type": "terminal",
+            "key": "TER ",
+            "format": "alacritty 0.16.1"
+        },
+        {
+            "type": "wm",
+            "key": "WM  ",
+            "format": "i3 4.25.1 (x11)"
+        }
+    ]
+}
