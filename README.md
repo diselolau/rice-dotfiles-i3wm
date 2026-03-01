@@ -12,4 +12,4 @@ If you want the full look, you will need these:
 * **Icons:** [Ant-Dark](https://www.gnome-look.org/p/1464285)
 * **Fonts:** CaskaydiaMono Nerd Font & Font Awesome 6
 * 
-Note: The fastfetch configuration uses hardcoded values in the format fields to maintain a specific aesthetic. Feel free to remove the "format" lines if you want it to detect your system specs automatically
+**Note:** The `fastfetch` configuration uses hardcoded values to maintain the aesthetic. Feel free to remove the "format" lines if you want it to detect your system specs automatically.
