@@ -1,4 +1,4 @@
-![Preview](./image.jpg)
+![Preview](./image.png)
 
 # Everforest i3wm Dotfiles
 
