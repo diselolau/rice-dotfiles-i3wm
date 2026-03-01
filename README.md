@@ -1,8 +1,4 @@
-<p align="center">
-  <img src="preview.png" alt="Everforest i3wm Rice" width="800">
-</p>
-# Everforest i3wm Dotfiles
-
+![perrito](preview.png)
 ## Core Components
 * **WM:** i3-gaps
 * **Bar:** Polybar
