@@ -1,3 +1,5 @@
+![Preview](./imagen.jpg)
+
 # Everforest i3wm Dotfiles
 
 ## Core Components
