@@ -1,4 +1,4 @@
-![perrito](preview.png)
+![perrito](perrito.png)
 ## Core Components
 * **WM:** i3-gaps
 * **Bar:** Polybar
